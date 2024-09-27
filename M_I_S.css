@@ -1,0 +1,132 @@
+:root {
+    --primary-color: #191919;
+    --white: #FFFFFF;
+    --sidebar-primary: #353E47;
+    --sidebar-primary-hover: #353E47;
+    --sidebar-background: #070E13;
+    --background: #F1F3FF;
+    --text-link: #FFFFFF;
+    --headline: #CBD1D8;
+    --expand-button: #353E47;
+    --logout: #FA7575;
+}
+
+body {
+    font-family: 'Work Sans',
+    sans-serif;
+    font-size: 16px;
+    padding: 16px;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    min-height: 53.75rem;
+    height: 100%;
+    padding: 1rem 0px;
+    border-radius: 1rem;
+    max-width: 18rem;
+    display: flex;
+    color: var(--white);
+    flex-direction: column;
+    background: var(--sidebar-background);
+}
+
+body.collapsed .sidebar {
+    max-width: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+body.collapsed .hide {
+    position: absolute;
+    display: none;
+}
+
+/*? search wrapper */
+.search_wrapper input {
+    background: var(--background);
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+    padding-left: 2rem;
+    flex-grow: 1;
+    outline: none;
+    border: none;
+}
+
+.search_wrapper svg {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 1.625rem;
+    transform: translate(-50%);
+    pointer-events: none;
+    right: 1.5rem;
+}
+
+body .collapsed .search_wrapper svg {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    stroke: var(--sidebar-primary-hover);
+}
+
+.sidebar-links .active {
+    text-decoration: none;
+    background: var(--sidebar-primary-hover);
+    color: var(--text-link);
+}
+
+.sidebar-links .active svg {
+    stroke: var(--text-link);
+}
+
+/* ?tooltip */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltip_conter {
+    visibility: hidden;
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    position: absolute;
+    z-index: 1;
+    left: 5.625rem;
+}
+
+.collapsed .tooltip:hover
+.tooltip_conter {
+    visibility: visible;
+}
+
+/*? profile part */
+.sidebar_profile {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-direction: row;
+    padding: 0 1rem;
+    color: var(--text-link);
+    overflow-x: hidden;
+    min-height: 2.6125rem;
+}
